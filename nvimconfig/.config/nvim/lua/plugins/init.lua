@@ -14,11 +14,14 @@ return {
   },
 
   {
+    "tpope/vim-fugitive",
+    lazy=false,
+  },
+
+  {
     "christoomey/vim-tmux-navigator",
     lazy=false,
   },
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
 
   {
     "nvim-treesitter/nvim-treesitter",

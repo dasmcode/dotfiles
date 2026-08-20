@@ -1,0 +1,1 @@
+dotfiles/p10k-config/.p10k.zsh
