@@ -6,6 +6,11 @@
 
 2. Clone the repo at {$HOME}/dotfiles
 
+```
+bash
+git clone https://github.com/dasmcode/dotfiles.git {$HOME}/dotfiles
+```
+
 3. Install other dependencies such as zshrc, tmux, nvim, etc as per needed.
 
 4. Run `stow .`
