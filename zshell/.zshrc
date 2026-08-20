@@ -70,10 +70,21 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+#Open bufer line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+alias gc='git commit'
+alias gs='git status'
+alias gl='git log'
+alias ga='git add .'
+alias gp='git push'
+alias gcl='git clone'
 alias ll='ls -lah'
 alias ..='cd ..'
 
