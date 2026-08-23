@@ -1,0 +1,35 @@
+[user]
+	email = mrinmoydas0604@gmail.com
+	name = dasmcode
+	signingkey = FCE573629FC4292D
+
+[init]
+	defaultBranch = main
+
+[commit]
+	gpgSign = true
+
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+	editor = nvim
+	pager = delta
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  side-by-side = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default

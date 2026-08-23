@@ -76,20 +76,53 @@ zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --all'
+alias ll='eza --color=always --long --git --icons=always --all'
 alias vim='nvim'
 alias c='clear'
+alias ..='cd ..'
+alias gcl='git clone'
 alias gc='git commit'
 alias gs='git status'
 alias gl='git log'
-alias ga='git add .'
+alias ga='git add'
 alias gp='git push'
-alias gcl='git clone'
-alias ll='ls -lah'
-alias ..='cd ..'
+alias gb='git branch'
+alias gi='git init'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# Use fd instead of fzf
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+
+source ~/.config/fzf/fzf-git.sh
+
+# Yazi
+export EDITOR="nvim"
+function y() {
+	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+	command rm -f -- "$tmp"
+}
+
+
+# Bat theme (better cat)
+export BAT_THEME="Catppuccin Mocha"
+
+. "$HOME/.local/bin/env"
