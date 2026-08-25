@@ -6,10 +6,13 @@ require("mason-tool-installer").setup({
 		"yamlls",
 		"clangd",
 		"bashls",
+		"stylua",
 		"black",
 		"jsonls",
 		"pylsp",
 		"kube-linter",
+		"prettierd",
+		"isort",
 	},
 })
 -- vim.lsp.enable({

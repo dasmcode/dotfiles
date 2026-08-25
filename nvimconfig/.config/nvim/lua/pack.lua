@@ -1,14 +1,17 @@
 vim.pack.add({
 	"https://github.com/nvim-mini/mini.nvim",
-	{ src = "Saghen/blink.cmp", version="v1"},
+	{ src = "Saghen/blink.cmp", version = "v1" },
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/christoomey/vim-tmux-navigator",
+	"https://github.com/folke/flash.nvim",
+	"https://github.com/abecodes/tabout.nvim",
 
 	{ src = "nvim-treesitter/nvim-treesitter", branch = "main" },
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/stevearc/conform.nvim",
 
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/sindrets/diffview.nvim",
@@ -21,6 +24,9 @@ vim.pack.add({
 })
 --- nvim treesitter ----
 require("plugins.treesitter")
+
+--- formatter ----
+require("plugins.conform")
 
 ---  lsp_completion ----
 require("lsp")
@@ -42,3 +48,5 @@ require("plugins.git-signs")
 ---lualine and buffer line----
 require("plugins.lualine")
 require("plugins.bufferline")
+require("plugins.flash")
+require("plugins.tabout")

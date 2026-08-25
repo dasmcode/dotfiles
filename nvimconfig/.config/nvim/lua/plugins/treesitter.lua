@@ -1,14 +1,21 @@
 local treesitter = require("nvim-treesitter")
 
-
 local ensure_installed = {
-    "go", "rust", "typescript", "javascript", "tsx",
-    "html", "css", "json", "bash",
-    "http", "dockerfile",
+	"go",
+	"rust",
+	"typescript",
+	"javascript",
+	"tsx",
+	"html",
+	"css",
+	"json",
+	"bash",
+	"http",
+	"dockerfile",
+	"python",
 }
 
 treesitter.install(ensure_installed)
-
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
