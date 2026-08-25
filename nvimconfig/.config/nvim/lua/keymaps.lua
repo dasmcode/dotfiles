@@ -12,7 +12,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank
 
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<C-c>", "<Esc>")
-vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
+-- vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search highlighting", silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
