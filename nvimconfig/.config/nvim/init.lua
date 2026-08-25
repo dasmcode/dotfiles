@@ -1,7 +1,5 @@
 require("vim._core.ui2").enable({})
-
-vim.cmd.colorscheme("catppuccin")
-
+require("theme")
 require("options")
 require("keymaps")
 require("commands")

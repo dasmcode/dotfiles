@@ -7,6 +7,11 @@ require("mini.notify").setup({
 			return notif.msg
 		end,
 	},
+	-- disable lsp notifications
+	lsp_progress = {
+		enable = false,
+		-- level = 'ERROR',
+	},
 })
 
 --- mini cmdline completion ---
@@ -46,4 +51,13 @@ MiniSnippets.setup({
 MiniSnippets.start_lsp_server({ match = false })
 
 
+---mini pairs---
 require("mini.pairs").setup()
+
+
+---mini starter---
+require("mini.starter").setup()
+
+
+---mini animate---
+require("mini.animate").setup()

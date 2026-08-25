@@ -44,3 +44,5 @@ vim.api.nvim_create_autocmd("TextYankPost",{
 		vim.hl.on_yank()
 	end,
 })
+-- single global status line -- 
+vim.opt.laststatus = 3

@@ -1,0 +1,16 @@
+font-family = FiraCode Nerd Font
+font-size = 12
+font-style = "SemiBold"
+theme = "Catppuccin Mocha"
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
+adjust-cell-height = 35%
+background-opacity = 0.95
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+copy-on-select = clipboard
+window-width = 9999
+window-height = 9999
+window-decoration = true
+working-directory = home
