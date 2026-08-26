@@ -12,6 +12,7 @@ vim.pack.add({
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/stevearc/conform.nvim",
+	"https://github.com/meanderingprogrammer/render-markdown.nvim",
 
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/sindrets/diffview.nvim",
@@ -48,5 +49,7 @@ require("plugins.git-signs")
 ---lualine and buffer line----
 require("plugins.lualine")
 require("plugins.bufferline")
+
 require("plugins.flash")
 require("plugins.tabout")
+require("plugins.markdown")
