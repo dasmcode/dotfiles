@@ -12,5 +12,6 @@ mouse-scroll-multiplier = 2
 copy-on-select = clipboard
 window-width = 9999
 window-height = 9999
-window-decoration = true
+# window-decoration = true
+gtk-titlebar = false
 working-directory = home
