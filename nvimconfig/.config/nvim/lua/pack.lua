@@ -1,12 +1,12 @@
 vim.pack.add({
 	"https://github.com/nvim-mini/mini.nvim",
-	{ src = "Saghen/blink.cmp", version = "v1" },
+	{ src = "https://github.com/Saghen/blink.cmp", version = "v1" },
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/christoomey/vim-tmux-navigator",
 	"https://github.com/folke/flash.nvim",
 	"https://github.com/abecodes/tabout.nvim",
 
-	{ src = "nvim-treesitter/nvim-treesitter", branch = "main" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
