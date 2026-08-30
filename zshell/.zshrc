@@ -79,16 +79,14 @@ bindkey '^x^e' edit-command-line
 alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --all'
 alias ll='eza --color=always --long --git --icons=always --all'
 alias vim='nvim'
-alias c='clear'
-alias ..='cd ..'
 alias gcl='git clone'
+alias c='clear'
 alias gc='git commit'
 alias gs='git status'
 alias gl='git log'
 alias ga='git add'
 alias gp='git push'
-alias gb='git branch'
-alias gi='git init'
+alias ..='cd ..'
 
 # Shell integrations
 eval "$(fzf --zsh)"

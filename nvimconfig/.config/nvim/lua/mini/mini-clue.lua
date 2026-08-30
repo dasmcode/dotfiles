@@ -1,4 +1,4 @@
-miniclue = require('mini.clue')
+local miniclue = require('mini.clue')
 miniclue.setup({
   triggers = {
     -- Leader triggers

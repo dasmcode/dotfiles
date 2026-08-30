@@ -1,10 +1,8 @@
 --- mini picker ---
 local MiniPick = require("mini.pick")
 local MiniExtra = require("mini.extra")
-local MiniIcons = require("mini.icons")
 MiniPick.setup()
 MiniExtra.setup()
-MiniIcons.setup()
 
 -- keymaps
 vim.keymap.set("n", "<leader>fb", function()

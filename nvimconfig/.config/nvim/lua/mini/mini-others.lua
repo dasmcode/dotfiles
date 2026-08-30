@@ -1,4 +1,5 @@
-
+local MiniIcons = require("mini.icons")
+MiniIcons.setup()
 ---- mini notify ----
 require("mini.notify").setup({
 	-- only show messages
@@ -16,7 +17,7 @@ require("mini.notify").setup({
 
 --- mini cmdline completion ---
 require("mini.cmdline").setup({
-	autocorrect = { enable = false }
+	autocorrect = { enable = false },
 })
 
 --- mini surround ---
@@ -34,30 +35,21 @@ require("mini.surround").setup()
 --- mini comment ---
 MiniComment = require("mini.comment")
 MiniComment.setup({
-  mappings = {
-    comment = "<leader>/",        -- operator (works with motions)
-    comment_visual = "<leader>/", -- visual selection
-    comment_line = "<leader>//",  -- current line
-  },
+	mappings = {
+		comment = "<leader>/", -- operator (works with motions)
+		comment_visual = "<leader>/", -- visual selection
+		comment_line = "<leader>//", -- current line
+	},
 })
 
 --- mini snippets ---
 local MiniSnippets = require("mini.snippets")
 MiniSnippets.setup({
-    snippets = {
-        MiniSnippets.gen_loader.from_lang(), -- loads friendly-snippets
-    },
+	snippets = {
+		MiniSnippets.gen_loader.from_lang(), -- loads friendly-snippets
+	},
 })
 MiniSnippets.start_lsp_server({ match = false })
 
-
 ---mini pairs---
 require("mini.pairs").setup()
-
-
----mini starter---
-require("mini.starter").setup()
-
-
----mini animate---
-require("mini.animate").setup()

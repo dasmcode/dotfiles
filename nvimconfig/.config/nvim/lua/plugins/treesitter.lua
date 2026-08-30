@@ -1,38 +1,45 @@
-local treesitter = require("nvim-treesitter")
+return {
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	build = ":TSUpdate",
+	config = function()
+		local treesitter = require("nvim-treesitter")
 
-local ensure_installed = {
-	"go",
-	"rust",
-	"typescript",
-	"javascript",
-	"tsx",
-	"html",
-	"css",
-	"json",
-	"bash",
-	"http",
-	"dockerfile",
-	"python",
-}
+		local ensure_installed = {
+			"go",
+			"rust",
+			"typescript",
+			"javascript",
+			"tsx",
+			"html",
+			"css",
+			"json",
+			"bash",
+			"http",
+			"dockerfile",
+			"python",
+		}
 
-treesitter.install(ensure_installed)
+		treesitter.install(ensure_installed)
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	callback = function(args)
-		local buf = args.buf
-		local ft = vim.bo[buf].filetype
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "*",
+			callback = function(args)
+				local buf = args.buf
+				local ft = vim.bo[buf].filetype
 
-		local lang = vim.treesitter.language.get_lang(ft)
-		if not lang then
-			return
-		end
+				local lang = vim.treesitter.language.get_lang(ft)
+				if not lang then
+					return
+				end
 
-		local ok_add = pcall(vim.treesitter.language.add, lang)
-		if not ok_add then
-			return
-		end
+				local ok_add = pcall(vim.treesitter.language.add, lang)
+				if not ok_add then
+					return
+				end
 
-		pcall(vim.treesitter.start, buf, lang)
+				pcall(vim.treesitter.start, buf, lang)
+			end,
+		})
 	end,
-})
+}

@@ -1,26 +1,18 @@
-local neogit = require("neogit")
+return {
+	"NeogitOrg/neogit",
+	lazy = true,
+	dependencies = {
+		"sindrets/diffview.nvim", -- optional
 
-neogit.setup({
-  integrations = {
-    diffview = true,
-  },
+		"m00qek/baleia.nvim", -- optional
 
-  disable_commit_confirmation = true,
-})
-
--- keymaps --
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<CR>", {
-  desc = "Open Neogit",
-})
-
-vim.keymap.set("n", "<leader>gc", "<cmd>Neogit commit<CR>", {
-  desc = "Git commit",
-})
-
-vim.keymap.set("n", "<leader>gp", "<cmd>Neogit push<CR>", {
-  desc = "Git push",
-})
-
-vim.keymap.set("n", "<leader>gl", "<cmd>Neogit pull<CR>", {
-  desc = "Git pull",
-})
+		"nvim-mini/mini.pick", -- optional
+	},
+	cmd = "Neogit",
+	keys = {
+		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
+		{ "<leader>gc", "<cmd>Neogit commit<CR>", desc = "Git commit" },
+		{ "<leader>gp", "<cmd>Neogit push<CR>", desc = "Git push" },
+		{ "<leader>gl", "<cmd>Neogit pull<CR>", desc = "Git pull" },
+	},
+}

@@ -1,0 +1,5 @@
+require("mini.mini-ai")
+require("mini.mini-files")
+require("mini.mini-others")
+-- require("mini.mini-picker")
+require("mini.mini-clue")

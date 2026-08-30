@@ -1,44 +1,54 @@
-require("blink.cmp").setup({
-	keymap = {
-		preset = "super-tab",
-	},
+return {
+	"saghen/blink.cmp",
+	dependencies = { "rafamadriz/friendly-snippets" },
 
-	cmdline = {
-		enabled = false,
-	},
+	version = "1.*",
 
-	appearance = {
-		nerd_font_variant = "mono",
-	},
+	---@module 'blink.cmp'
+	---@type blink.cmp.Config
+	opts = {
 
-	completion = {
-		menu = {
-			draw = {
-				columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
-			},
-			border = "rounded",
+		keymap = {
+			preset = "super-tab",
 		},
-		documentation = {
-			auto_show = true,
-			auto_show_delay_ms = 500,
-			window = {
+
+		cmdline = {
+			enabled = false,
+		},
+
+		appearance = {
+			nerd_font_variant = "mono",
+		},
+
+		completion = {
+			menu = {
+				draw = {
+					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+				},
 				border = "rounded",
-				desired_min_width = 15,
 			},
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 500,
+				window = {
+					border = "rounded",
+					desired_min_width = 15,
+				},
+			},
+			-- ghost_text = {
+			-- 	enabled = true,
+			-- },
 		},
-		-- ghost_text = {
-		-- 	enabled = true,
-		-- },
-	},
 
-	sources = {
-		default = { "lsp", "path", "snippets", "buffer" },
-	},
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
 
-	fuzzy = {
-		implementation = "prefer_rust_with_warning",
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
+		signature = {
+			enabled = true,
+		},
 	},
-	signature = {
-		enabled = true,
-	},
-})
+}

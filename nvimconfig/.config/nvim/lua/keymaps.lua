@@ -43,7 +43,10 @@ vim.keymap.set("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :
 -- tab switch using mini tabline
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>xc", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>xo", "<cmd>%bd|e#|bd#<CR>", { desc = "Delete other buffers" })
+vim.keymap.set("n", "<leader>xx", "<cmd>%bd<CR>", { desc = "Delete all buffers" })
+
 -- native undotree
 vim.keymap.set("n", "<leader>u", function()
 	vim.cmd.packadd("nvim.undotree")
