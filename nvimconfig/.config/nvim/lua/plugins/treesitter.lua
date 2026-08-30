@@ -18,6 +18,7 @@ return {
 			"http",
 			"dockerfile",
 			"python",
+			"sql",
 		}
 
 		treesitter.install(ensure_installed)

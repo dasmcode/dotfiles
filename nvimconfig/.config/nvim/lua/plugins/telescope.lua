@@ -14,11 +14,21 @@ return {
 		require("telescope").load_extension("fzf")
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+		vim.keymap.set("n", "<leader>fa", function()
+			builtin.find_files({
+				cwd = vim.uv.os_homedir(),
+				hidden = true,
+			})
+		end, { desc = "Search in vim config directory" })
+
 		-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 		vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Telescope help tags" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope diagnostics" })
-		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Search Keymaps" })
+		vim.keymap.set("n", "<leader>fn", function()
+			require("telescope").extensions.notify.notify()
+		end, { desc = "Telescope diagnostics" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope Search Keymaps" })
 		vim.keymap.set("n", "<leader>en", function()
 			builtin.find_files({
 				cwd = vim.fn.stdpath("config"),

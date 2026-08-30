@@ -10,6 +10,8 @@ return {
 			"bashls",
 			"pylsp",
 			"jsonls",
+			"postgres-language-server",
+			"basedpyright",
 
 			--- Formatters
 			"stylua",

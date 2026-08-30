@@ -9,22 +9,22 @@ return {
 	opts = {
 
 		keymap = {
-			preset = "super-tab",
+			preset = "enter",
 		},
 
 		cmdline = {
-			enabled = false,
+			keymap = { preset = "super-tab" },
+			completion = { menu = { auto_show = true } },
 		},
-
 		appearance = {
 			nerd_font_variant = "mono",
 		},
 
 		completion = {
 			menu = {
-				draw = {
-					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
-				},
+				-- draw = {
+				-- 	columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+				-- },
 				border = "rounded",
 			},
 			documentation = {
@@ -42,6 +42,13 @@ return {
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+			per_filetype = {
+				sql = { "snippets", "dadbod", "buffer" },
+			},
+			-- add vim-dadbod-completion to your completion providers
+			providers = {
+				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+			},
 		},
 
 		fuzzy = {

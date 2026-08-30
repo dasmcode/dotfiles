@@ -1,24 +1,24 @@
 local MiniIcons = require("mini.icons")
 MiniIcons.setup()
 ---- mini notify ----
-require("mini.notify").setup({
-	-- only show messages
-	content = {
-		format = function(notif)
-			return notif.msg
-		end,
-	},
-	-- disable lsp notifications
-	lsp_progress = {
-		enable = false,
-		-- level = 'ERROR',
-	},
-})
+-- require("mini.notify").setup({
+-- 	-- only show messages
+-- 	content = {
+-- 		format = function(notif)
+-- 			return notif.msg
+-- 		end,
+-- 	},
+-- 	-- disable lsp notifications
+-- 	lsp_progress = {
+-- 		enable = false,
+-- 		-- level = 'ERROR',
+-- 	},
+-- })
 
 --- mini cmdline completion ---
-require("mini.cmdline").setup({
-	autocorrect = { enable = false },
-})
+-- require("mini.cmdline").setup({
+-- 	autocorrect = { enable = false },
+-- })
 
 --- mini surround ---
 require("mini.surround").setup()
