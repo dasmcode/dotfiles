@@ -43,3 +43,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 -- single global status line --
 vim.opt.laststatus = 3
+
+-- Automatically save the session when Neovim closes or changes files
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }

@@ -8,7 +8,7 @@ return {
 			"yamlls",
 			"clangd",
 			"bashls",
-			"pylsp",
+			-- "pylsp",
 			"jsonls",
 			"postgres-language-server",
 			"basedpyright",
