@@ -15,6 +15,8 @@ return {
 
 			--- Formatters
 			"stylua",
+			"tectonic",
+			"mmdc",
 			"black",
 			"prettierd",
 			"dockerfmt",

@@ -19,6 +19,11 @@ return {
 			"dockerfile",
 			"python",
 			"sql",
+			"latex",
+			"scss",
+			"svelte",
+			"typst",
+			"vue",
 		}
 
 		treesitter.install(ensure_installed)

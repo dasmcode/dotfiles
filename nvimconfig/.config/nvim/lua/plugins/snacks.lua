@@ -6,14 +6,25 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = {
-
+			preset = {
+				keys = {
+					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files',{ hidden=true })" },
+					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+					{ icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep',{ hidden=true })" },
+					{ icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles',{ hidden=true })" },
+					{ icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config'), hidden=true })" },
+					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
+					{ icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+				},
+			},
 			sections = {
 				{ section = "header" },
 				{ section = "keys", gap = 1, padding = 1 },
 				{ section = "startup" },
 				{
 					section = "terminal",
-					cmd = "ascii-image-converter ~/Pictures/YiP.jpeg -b",
+					cmd = "ascii-image-converter ~/.config/nvim/YiP.png -c -C",
 					random = 10,
 					pane = 2,
 					indent = 4,
@@ -25,6 +36,7 @@ return {
 		},
 		-- explorer = { enabled = true },
 		indent = { enabled = true },
+		image = { enabled = true },
 		-- input = { enabled = true },
 		notifier = {
 			enabled = true,
