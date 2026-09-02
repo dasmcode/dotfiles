@@ -46,3 +46,24 @@ vim.opt.laststatus = 3
 
 -- Automatically save the session when Neovim closes or changes files
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+
+
+vim.diagnostic.config({
+  float = {
+    border = "rounded",
+    source = "if_many",
+    header = "",
+    prefix = function(diagnostic)
+      local icons = {
+        [vim.diagnostic.severity.ERROR] = " ",
+        [vim.diagnostic.severity.WARN]  = " ",
+        [vim.diagnostic.severity.INFO]  = " ",
+        [vim.diagnostic.severity.HINT]  = "󰌵 ",
+      }
+
+      return icons[diagnostic.severity] or "  "
+    end,
+  },
+
+  severity_sort = true,
+})

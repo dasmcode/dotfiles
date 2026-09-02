@@ -5,8 +5,9 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			dockerfile = { "dockerfmt" },
-			python = { "isort", "black" },
+			python = {"ruff_format"},
 			javascript = { "prettierd", "prettier", stop_after_first = true },
+			yaml = { "prettierd", "prettier", stop_after_first = true },
 		},
 		-- format_on_save = {
 		-- 	timeout_ms = 500,

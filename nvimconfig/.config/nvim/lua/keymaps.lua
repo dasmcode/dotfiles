@@ -4,7 +4,14 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
+-- vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
+
+vim.keymap.set("n", "<leader>d", function ()
+	vim.diagnostic.open_float(nil, {
+		scope = "cursor",
+		source = "if_many",
+	})
+end, { desc = "Show diagnostic on cursor" })
 
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<C-c>", "<Esc>")

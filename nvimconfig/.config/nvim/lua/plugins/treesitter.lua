@@ -24,6 +24,11 @@ return {
 			"svelte",
 			"typst",
 			"vue",
+
+			"git_config",
+			"git_rebase",
+			"gitcommit",
+			"gitignore",
 		}
 
 		treesitter.install(ensure_installed)

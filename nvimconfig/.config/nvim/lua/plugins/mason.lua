@@ -8,7 +8,6 @@ return {
 			"yamlls",
 			"clangd",
 			"bashls",
-			-- "pylsp",
 			"jsonls",
 			"postgres-language-server",
 			"basedpyright",
@@ -17,13 +16,14 @@ return {
 			"stylua",
 			"tectonic",
 			"mmdc",
-			"black",
+			"ruff",
 			"prettierd",
 			"dockerfmt",
-			"isort",
 
 			--- Linters
 			"kube-linter",
+			"hadolint",
+			"yamllint",
 		},
 	},
 	dependencies = {
