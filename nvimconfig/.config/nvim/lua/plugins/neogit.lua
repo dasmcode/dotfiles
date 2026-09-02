@@ -2,17 +2,27 @@ return {
 	"NeogitOrg/neogit",
 	lazy = true,
 	dependencies = {
-		"sindrets/diffview.nvim", -- optional
+		"esmuellert/codediff.nvim",
 
-		"m00qek/baleia.nvim", -- optional
+		"m00qek/baleia.nvim",
 
-		"nvim-mini/mini.pick", -- optional
+		"folke/snacks.nvim",
 	},
 	cmd = "Neogit",
+	opts = {
+		graph_style = "kitty",
+		disable_line_numbers = false,
+		disable_relative_line_numbers = false,
+		commit_editor = {
+			staged_diff_split_kind = "vsplit",
+		},
+		integrations = {
+			codediff = true, 
+			snacks = true,
+		},
+		diff_viewer = "codediff",
+	},
 	keys = {
-		{ "<leader>gg", "<cmd>Neogit kind=floating<cr>", desc = "Show Neogit UI" },
-		-- { "<leader>gc", "<cmd>Neogit commit<CR>", desc = "Git commit" },
-		-- { "<leader>gp", "<cmd>Neogit push<CR>", desc = "Git push" },
-		-- { "<leader>gl", "<cmd>Neogit pull<CR>", desc = "Git pull" },
+		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
 	},
 }

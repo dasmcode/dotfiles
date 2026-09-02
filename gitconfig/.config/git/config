@@ -14,7 +14,7 @@
 	whitespace = error
 	preloadindex = true
 	editor = nvim
-	pager = delta
+	pager = delta --pager='less -R'
 
 [status]
 	branch = true
