@@ -8,6 +8,9 @@ MiniFiles.setup({
 		go_out = "_",
 		go_out_plus = "H",
 	},
+	options = {
+		permanent_delete = false,
+	},
 })
 
 vim.keymap.set("n", "-", "<cmd>lua MiniFiles.open()<CR>", { desc = "Toggle mini file explorer" })

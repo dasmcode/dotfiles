@@ -4,6 +4,12 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	opts = {
+		animate = {
+			  ---@type snacks.animate.Duration|number
+			  duration = 20, -- ms per step
+			  easing = "linear",
+			  fps = 120, -- frames per second. Global setting for all animations
+		},
 		bigfile = { enabled = true },
 		dashboard = {
 			preset = {
@@ -51,13 +57,14 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		toggle = { enabled = true },
-		-- scroll = { enabled = true },
+		rename = { enabled = true },
+		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		lazygit = { enabled = true },
 		styles = {
 			notification = {
-				-- wo = { wrap = true } -- Wrap notifications
+				wo = { wrap = true } -- Wrap notifications
 			},
 		},
 	},
@@ -80,7 +87,7 @@ return {
 		{
 			"<leader>fg",
 			function()
-				Snacks.picker.grep()
+				Snacks.picker.grep({hidden = true})
 			end,
 			desc = "Grep",
 		},

@@ -11,6 +11,7 @@ return {
 			"jsonls",
 			"postgres-language-server",
 			"basedpyright",
+			"gopls",
 
 			--- Formatters
 			"stylua",
@@ -19,6 +20,8 @@ return {
 			"ruff",
 			"prettierd",
 			"dockerfmt",
+			"gofumpt",
+			"goimports",
 
 			--- Linters
 			"kube-linter",

@@ -47,7 +47,6 @@ return {
 			neotest = true,
 			neotree = true,
 			noice = true,
-			notify = true,
 			snacks = true,
 			telescope = true,
 			treesitter_context = true,

@@ -2,12 +2,14 @@
 
 ## How to Use: 
 
-1. Have stow installed via `sudo dnf install stow`
+1. Have stow installed via: 
+```bash 
+sudo dnf install stow
+```
 
 2. Clone the repo at $HOME/dotfiles
 
-```
-bash
+```bash
 git clone https://github.com/dasmcode/dotfiles.git $HOME/dotfiles
 sudo dnf copr enable lihaohong/yazi
 sudo dnf install yazi eza bat

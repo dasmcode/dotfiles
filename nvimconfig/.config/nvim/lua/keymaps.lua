@@ -50,8 +50,8 @@ vim.keymap.set("n", "<leader>xc", "<cmd>bdelete<CR>", { desc = "Delete buffer" }
 vim.keymap.set("n", "<leader>xo", "<cmd>%bd|e#|bd#<CR>", { desc = "Delete other buffers" })
 vim.keymap.set("n", "<leader>xx", "<cmd>%bd<CR>", { desc = "Delete all buffers" })
 
--- native undotree
-vim.keymap.set("n", "<leader>u", function()
-	vim.cmd.packadd("nvim.undotree")
-	require("undotree").open()
-end, { desc = "Toggle Builtin Undotree" })
+-- -- native undotree
+-- vim.keymap.set("n", "<leader>u", function()
+-- 	vim.cmd.packadd("nvim.undotree")
+-- 	require("undotree").open()
+-- end, { desc = "Toggle Builtin Undotree" })

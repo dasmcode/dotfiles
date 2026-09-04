@@ -6,6 +6,7 @@ return {
 			lua = { "stylua" },
 			dockerfile = { "dockerfmt" },
 			python = {"ruff_format"},
+			go = {"goimports", "gofumpt"},
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			yaml = { "prettierd", "prettier", stop_after_first = true },
 		},
