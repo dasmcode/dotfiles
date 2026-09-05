@@ -13,6 +13,7 @@ return {
 			"tsx",
 			"html",
 			"css",
+			"lua",
 			"json",
 			"bash",
 			"http",

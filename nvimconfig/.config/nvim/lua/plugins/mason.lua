@@ -12,13 +12,17 @@ return {
 			"postgres-language-server",
 			"basedpyright",
 			"gopls",
+			"typescript-language-server",
+			"eslint-lsp",
 
 			--- Formatters
 			"stylua",
 			"tectonic",
 			"mmdc",
+			"isort",
 			"ruff",
 			"prettierd",
+			"prettier",
 			"dockerfmt",
 			"gofumpt",
 			"goimports",
