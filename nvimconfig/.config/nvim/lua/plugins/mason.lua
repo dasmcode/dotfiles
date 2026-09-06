@@ -4,7 +4,8 @@ return {
 		ensure_installed = {
 			--- Language servers
 			"lua_ls",
-			"docker-language-server",
+			"dockerfile-language-server",
+			"docker-compose-language-service",
 			"yamlls",
 			"clangd",
 			"bashls",
@@ -14,6 +15,7 @@ return {
 			"gopls",
 			"typescript-language-server",
 			"eslint-lsp",
+			"taplo",
 
 			--- Formatters
 			"stylua",

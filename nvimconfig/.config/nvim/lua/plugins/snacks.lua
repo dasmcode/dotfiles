@@ -70,421 +70,69 @@ return {
 	},
 	keys = {
 		-- Top Pickers & Explorer
-		{
-			"<leader><space>",
-			function()
-				Snacks.picker.smart()
-			end,
-			desc = "Smart Find Files",
-		},
-		{
-			"<leader>,",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
-		},
-		{
-			"<leader>fg",
-			function()
-				Snacks.picker.grep({hidden = true})
-			end,
-			desc = "Grep",
-		},
-		{
-			"<leader>:",
-			function()
-				Snacks.picker.command_history()
-			end,
-			desc = "Command History",
-		},
-		{
-			"<leader>fn",
-			function()
-				Snacks.picker.notifications()
-			end,
-			desc = "Notification History",
-		},
+		{ "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+		{ "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
+		{ "<leader>fg", function() Snacks.picker.grep({ hidden = true }) end, desc = "Grep" },
+		{ "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+		{ "<leader>fn", function() Snacks.picker.notifications() end, desc = "Notification History" },
 		-- find
-		{
-			"<leader>fb",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
-		},
-		{
-			"<leader>fc",
-			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-			end,
-			desc = "Find Config File",
-		},
-		{
-			"<leader>fa",
-			function()
-				Snacks.picker.files({ cwd = vim.uv.os_homedir(), hidden = true })
-			end,
-			desc = "Find Config File",
-		},
-		{
-			"<leader>ff",
-			function()
-				Snacks.picker.files({ hidden = true })
-			end,
-			desc = "Find Files",
-		},
-		{
-			"<leader>fz",
-			function()
-				Snacks.picker.git_files()
-			end,
-			desc = "Find Git Files",
-		},
-		{
-			"<leader>vh",
-			function()
-				Snacks.picker.help()
-			end,
-			desc = "Help Pages",
-		},
-		{
-			"<leader>fp",
-			function()
-				Snacks.picker.projects()
-			end,
-			desc = "Projects",
-		},
-		{
-			"<leader>fr",
-			function()
-				Snacks.picker.recent()
-			end,
-			desc = "Recent",
-		},
+		{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+		{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+		{ "<leader>fa", function() Snacks.picker.files({ cwd = vim.uv.os_homedir(), hidden = true }) end, desc = "Find Config File" },
+		{ "<leader>ff", function() Snacks.picker.files({ hidden = true }) end, desc = "Find Files" },
+		{ "<leader>fz", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+		{ "<leader>vh", function() Snacks.picker.help() end, desc = "Help Pages" },
+		{ "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+		{ "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
 		-- git
-		{
-			"<leader>gb",
-			function()
-				Snacks.picker.git_branches()
-			end,
-			desc = "Git Branches",
-		},
-		{
-			"<leader>gl",
-			function()
-				Snacks.picker.git_log()
-			end,
-			desc = "Git Log",
-		},
-		{
-			"<leader>gL",
-			function()
-				Snacks.picker.git_log_line()
-			end,
-			desc = "Git Log Line",
-		},
-		{
-			"<leader>gs",
-			function()
-				Snacks.picker.git_status()
-			end,
-			desc = "Git Status",
-		},
-		{
-			"<leader>gS",
-			function()
-				Snacks.picker.git_stash()
-			end,
-			desc = "Git Stash",
-		},
-		{
-			"<leader>gd",
-			function()
-				Snacks.picker.git_diff()
-			end,
-			desc = "Git Diff (Hunks)",
-		},
-		{
-			"<leader>gf",
-			function()
-				Snacks.picker.git_log_file()
-			end,
-			desc = "Git Log File",
-		},
+		{ "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+		{ "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
+		{ "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
+		{ "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+		{ "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
+		{ "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+		{ "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
 		-- search
-		{
-			'<leader>f"',
-			function()
-				Snacks.picker.registers()
-			end,
-			desc = "Registers",
-		},
-		{
-			"<leader>f/",
-			function()
-				Snacks.picker.search_history()
-			end,
-			desc = "Search History",
-		},
-		{
-			"<leader>fc",
-			function()
-				Snacks.picker.command_history()
-			end,
-			desc = "Command History",
-		},
-		{
-			"<leader>fC",
-			function()
-				Snacks.picker.commands()
-			end,
-			desc = "Commands",
-		},
-		{
-			"<leader>fd",
-			function()
-				Snacks.picker.diagnostics()
-			end,
-			desc = "Diagnostics",
-		},
-		{
-			"<leader>fD",
-			function()
-				Snacks.picker.diagnostics_buffer()
-			end,
-			desc = "Buffer Diagnostics",
-		},
-		{
-			"<leader>fH",
-			function()
-				Snacks.picker.highlights()
-			end,
-			desc = "Highlights",
-		},
-		{
-			"<leader>fi",
-			function()
-				Snacks.picker.icons()
-			end,
-			desc = "Icons",
-		},
-		{
-			"<leader>fj",
-			function()
-				Snacks.picker.jumps()
-			end,
-			desc = "Jumps",
-		},
-		{
-			"<leader>fk",
-			function()
-				Snacks.picker.keymaps()
-			end,
-			desc = "Keymaps",
-		},
-		{
-			"<leader>fl",
-			function()
-				Snacks.picker.loclist()
-			end,
-			desc = "Location List",
-		},
-		{
-			"<leader>fm",
-			function()
-				Snacks.picker.marks()
-			end,
-			desc = "Marks",
-		},
-		{
-			"<leader>fM",
-			function()
-				Snacks.picker.man()
-			end,
-			desc = "Man Pages",
-		},
-		{
-			"<leader>fp",
-			function()
-				Snacks.picker.lazy()
-			end,
-			desc = "Search for Plugin Spec",
-		},
-		{
-			"<leader>fq",
-			function()
-				Snacks.picker.qflist()
-			end,
-			desc = "Quickfix List",
-		},
-		{
-			"<leader>fR",
-			function()
-				Snacks.picker.resume()
-			end,
-			desc = "Resume",
-		},
-		{
-			"<leader>fu",
-			function()
-				Snacks.picker.undo()
-			end,
-			desc = "Undo History",
-		},
-		{
-			"<leader>uC",
-			function()
-				Snacks.picker.colorschemes()
-			end,
-			desc = "Colorschemes",
-		},
+		{ '<leader>f"', function() Snacks.picker.registers() end, desc = "Registers" },
+		{ "<leader>f/", function() Snacks.picker.search_history() end, desc = "Search History" },
+		{ "<leader>fc", function() Snacks.picker.command_history() end, desc = "Command History" },
+		{ "<leader>fC", function() Snacks.picker.commands() end, desc = "Commands" },
+		{ "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+		{ "<leader>fD", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+		{ "<leader>fH", function() Snacks.picker.highlights() end, desc = "Highlights" },
+		{ "<leader>fi", function() Snacks.picker.icons() end, desc = "Icons" },
+		{ "<leader>fj", function() Snacks.picker.jumps() end, desc = "Jumps" },
+		{ "<leader>fk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+		{ "<leader>fl", function() Snacks.picker.loclist() end, desc = "Location List" },
+		{ "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
+		{ "<leader>fM", function() Snacks.picker.man() end, desc = "Man Pages" },
+		{ "<leader>fp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
+		{ "<leader>fq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
+		{ "<leader>fR", function() Snacks.picker.resume() end, desc = "Resume" },
+		{ "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo History" },
+		{ "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
 		-- LSP
-		{
-			"gd",
-			function()
-				Snacks.picker.lsp_definitions()
-			end,
-			desc = "Goto Definition",
-		},
-		{
-			"gD",
-			function()
-				Snacks.picker.lsp_declarations()
-			end,
-			desc = "Goto Declaration",
-		},
-		{
-			"gr",
-			function()
-				Snacks.picker.lsp_references()
-			end,
-			nowait = true,
-			desc = "References",
-		},
-		{
-			"gI",
-			function()
-				Snacks.picker.lsp_implementations()
-			end,
-			desc = "Goto Implementation",
-		},
-		{
-			"gy",
-			function()
-				Snacks.picker.lsp_type_definitions()
-			end,
-			desc = "Goto T[y]pe Definition",
-		},
-		{
-			"gai",
-			function()
-				Snacks.picker.lsp_incoming_calls()
-			end,
-			desc = "C[a]lls Incoming",
-		},
-		{
-			"gao",
-			function()
-				Snacks.picker.lsp_outgoing_calls()
-			end,
-			desc = "C[a]lls Outgoing",
-		},
+		{ "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+		{ "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+		{ "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+		{ "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+		{ "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+		{ "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
+		{ "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
 		-- Other
-		{
-			"<leader>z",
-			function()
-				Snacks.zen()
-			end,
-			desc = "Toggle Zen Mode",
-		},
-		{
-			"<leader>Z",
-			function()
-				Snacks.zen.zoom()
-			end,
-			desc = "Toggle Zoom",
-		},
-		{
-			"<leader>.",
-			function()
-				Snacks.scratch()
-			end,
-			desc = "Toggle Scratch Buffer",
-		},
-		{
-			"<leader>n",
-			function()
-				Snacks.notifier.show_history()
-			end,
-			desc = "Notification History",
-		},
-		{
-			"<leader>bd",
-			function()
-				Snacks.bufdelete()
-			end,
-			desc = "Delete Buffer",
-		},
-		{
-			"<leader>cR",
-			function()
-				Snacks.rename.rename_file()
-			end,
-			desc = "Rename File",
-		},
-		{
-			"<leader>gB",
-			function()
-				Snacks.gitbrowse()
-			end,
-			desc = "Git Browse",
-			mode = { "n", "v" },
-		},
-		{
-			"<leader>lg",
-			function()
-				Snacks.lazygit()
-			end,
-			desc = "Lazygit",
-		},
-		{
-			"<leader>un",
-			function()
-				Snacks.notifier.hide()
-			end,
-			desc = "Dismiss All Notifications",
-		},
-		{
-			"<c-/>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "Toggle Terminal",
-		},
-		{
-			"<c-_>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "which_key_ignore",
-		},
-		{
-			"]]",
-			function()
-				Snacks.words.jump(vim.v.count1)
-			end,
-			desc = "Next Reference",
-			mode = { "n", "t" },
-		},
-		{
-			"[[",
-			function()
-				Snacks.words.jump(-vim.v.count1)
-			end,
-			desc = "Prev Reference",
-			mode = { "n", "t" },
-		},
+		{ "<leader>z", function() Snacks.zen() end, desc = "Toggle Zen Mode" },
+		{ "<leader>Z", function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+		{ "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+		{ "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+		{ "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+		{ "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+		{ "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+		{ "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
+		{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+		{ "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+		{ "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },
+		{ "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+		{ "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
 		{
 			"<leader>N",
 			desc = "Neovim News",

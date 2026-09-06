@@ -6,6 +6,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
+			toml = { "taplo" },
 			dockerfile = { "dockerfmt" },
 			python = {"isort","ruff_format"},
 			go = {"goimports", "gofumpt"},
