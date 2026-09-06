@@ -92,7 +92,7 @@ alias ..='cd ..'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
 
 # Use fd instead of fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"

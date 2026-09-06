@@ -1,0 +1,66 @@
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+blacklist = ["scratch"]
+dir_length = 2  # Uses last 2 directories: "projects/sesh" instead of just "sesh"
+
+[tui]
+prompt = "> "
+placeholder = "Filter sessions... "
+show_icons = false
+show_windows = true
+group_separator = true
+window_name_format = "#{window_name}"
+alias_auto_connect_delay = "150ms"
+alias_filter_prefix = "/"
+preview = true
+preview_width = 60
+preview_min_width = 100
+preview_border = "line"
+
+[default_session]
+startup_command = "nvim -c ':lua Snacks.picker.files({ hidden = true })'"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "Downloads 📥"
+path = "~/Downloads"
+startup_command = "eza --all --git --icons --color=always {}"
+
+
+[[session]]
+name = "Documents 󱔗 "
+path = "~/Documents/"
+startup_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "tmux config  "
+path = "~/.config/tmux"
+startup_command = "nvim tmux.conf"
+preview_command = "bat --color=always ~/.config/tmux/tmux.conf"
+alias = "tmux"
+alias_auto_connect = true
+
+[[session]]
+name = "nvim config  "
+path = "~/.config/nvim"
+startup_command = "nvim init.lua"
+preview_command = "eza --all --git --icons --color=always {}"
+alias = "nvim"
+alias_auto_connect = true
+
+
+[[session]]
+name = "dotfiles  "
+path = "~/dotfiles/"
+startup_command = "nvim"
+preview_command = "eza --all --git --icons --color=always {}"
+alias = "dot"
+alias_auto_connect = true
+
+
+[[session]]
+name = "sesh config  "
+path = "~/.config/sesh/"
+startup_command = "nvim sesh.toml"
+preview_command = "eza --all --git --icons --color=always {}"
+alias = "sesh"
+alias_auto_connect = true
