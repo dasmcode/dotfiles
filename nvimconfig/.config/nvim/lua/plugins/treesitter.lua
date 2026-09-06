@@ -10,6 +10,23 @@ return {
 				-- event = "LazyFile",
 				opts = function()
 					local tsc = require("treesitter-context")
+					vim.api.nvim_create_autocmd("FileType", {
+						callback = function(args)
+							local lang = vim.treesitter.language.get_lang(args.match)
+
+							if not lang then
+								return
+							end
+
+							if not pcall(vim.treesitter.start, args.buf, lang) then
+								return
+							end
+
+							vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+							vim.wo.foldmethod = "expr"
+							vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+						end,
+					})
 					Snacks.toggle({
 						name = "Treesitter Context",
 						get = tsc.enabled,
@@ -28,7 +45,7 @@ return {
 		config = function()
 			local treesitter = require("nvim-treesitter")
 
-			local ensure_installed = {
+			local parsers = {
 				"go",
 				"rust",
 				"typescript",
@@ -41,6 +58,7 @@ return {
 				"bash",
 				"http",
 				"dockerfile",
+				"yaml",
 				"python",
 				"sql",
 				"latex",
@@ -55,14 +73,22 @@ return {
 				"gitignore",
 			}
 
-			treesitter.install(ensure_installed)
+			treesitter.install(parsers)
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = ensure_installed,
-				callback = function()
-					vim.treesitter.start() -- highlighting
-					vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- folds
+				callback = function(args)
+					local lang = vim.treesitter.language.get_lang(args.match)
+
+					if not lang then
+						return
+					end
+
+					if not pcall(vim.treesitter.start, args.buf, lang) then
+						return
+					end
+
+					vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 					vim.wo.foldmethod = "expr"
-					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" -- indentation
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 				end,
 			})
 		end,

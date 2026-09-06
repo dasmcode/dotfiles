@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+vim.keymap.set({ "n" }, "<C-a>", "ggVG", {desc = "Select all text in a buffer"})
 
 vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
 

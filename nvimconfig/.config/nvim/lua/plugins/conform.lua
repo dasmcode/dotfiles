@@ -1,15 +1,15 @@
 return {
 	"stevearc/conform.nvim",
 	lazy = false,
-	event = {"BufWritePre"},
-	cmd = {"ConformInfo"},
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo" },
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			toml = { "taplo" },
 			dockerfile = { "dockerfmt" },
-			python = {"isort","ruff_format"},
-			go = {"goimports", "gofumpt"},
+			python = { "isort", "ruff_format" },
+			go = { "goimports", "gofumpt" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
 			javascriptreact = { "prettierd", "prettier", stop_after_first = true },
@@ -25,7 +25,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>fc",
+			"<leader>cf",
 			mode = { "n" },
 			function()
 				require("conform").format()
