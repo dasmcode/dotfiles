@@ -1,0 +1,12 @@
+# Top-level project fields.
+name = "dotfiles  "                                      # required: the workspace label
+group = "personal"
+working_dir = "${HOME}/dotfiles/"    # ~ and $VARS expand
+
+[[tabs]]
+name = "nvim"                                          # no command — just an empty shell
+command = "nvim"
+
+[[tabs]]
+name = "terminal"                                          # no command — just an empty shell
+command = "ll"

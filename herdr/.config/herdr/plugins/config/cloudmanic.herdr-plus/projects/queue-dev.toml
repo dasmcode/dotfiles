@@ -1,0 +1,17 @@
+# Top-level project fields.
+name = "queue.dev"                                      # required: the workspace label
+group = "ICICI"
+description = "dev project for queueing and caching test for i-assist"             # shown in the browser
+working_dir = "${HOME}/Documents/queue.dev/"    # ~ and $VARS expand
+
+[[tabs]]
+name = "nvim"                                            # required: the tab label
+command = "nvim" # runs on startup
+
+[[tabs]]
+name = "docker-comp"
+command = "ll"
+
+[[tabs]]
+name = "terminal"                                          # no command — just an empty shell
+command = "ll"

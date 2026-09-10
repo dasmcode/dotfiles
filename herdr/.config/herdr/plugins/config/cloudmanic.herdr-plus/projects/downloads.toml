@@ -1,0 +1,8 @@
+# Top-level project fields.
+name = "Downloads 📥"                                      # required: the workspace label
+group = "personal"
+working_dir = "${HOME}/Downloads/"    # ~ and $VARS expand
+
+[[tabs]]
+name = "terminal"                                          # no command — just an empty shell
+command = "ll"

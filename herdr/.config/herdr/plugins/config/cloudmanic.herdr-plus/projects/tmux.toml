@@ -1,0 +1,13 @@
+# Top-level project fields.
+name = "tmux config  "                                      # required: the workspace label
+group = "personal"
+working_dir = "${HOME}/.config/tmux/"    # ~ and $VARS expand
+
+[[tabs]]
+name = "nvim"                                            # required: the tab label
+command = "nvim tmux.conf" # runs on startup
+
+[[tabs]]
+name = "terminal"                                          # no command — just an empty shell
+command = "ll"
+
