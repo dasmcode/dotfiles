@@ -9,6 +9,7 @@
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "gitsigns.nvim": { "branch": "main", "commit": "5be654f2232c10ddcad19c1607a67b6b4b78fc29" },
   "hardtime.nvim": { "branch": "main", "commit": "244753782b945def87472d8f4e9e6a9d4ec18689" },
+  "herdr-nvim-nav": { "branch": "main", "commit": "ec047fd6d8d0269d54a34e9405af28d8aad4c8f0" },
   "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
   "lazydocker.nvim": { "branch": "main", "commit": "e971ef5d5bba424583c7b8c844e075cdae09f4ad" },
   "lualine.nvim": { "branch": "master", "commit": "221ce6b2d999187044529f49da6554a92f740a96" },
