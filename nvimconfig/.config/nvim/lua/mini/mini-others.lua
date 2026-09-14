@@ -34,3 +34,9 @@ MiniSnippets.start_lsp_server({ match = false })
 
 ---mini pairs---
 require("mini.pairs").setup()
+
+---mini move---
+require("mini.move").setup()
+
+---mini jump---
+require("mini.jump").setup()

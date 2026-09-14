@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 export PATH="$HOME/.local/bin:$PATH"
 
 # Set the directory we want to store zinit and plugins
@@ -18,9 +11,6 @@ fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-
-# Add in Powerlevel10k
-# zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load completions
 zinit light zsh-users/zsh-syntax-highlighting
@@ -39,7 +29,10 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
+
+# Add kubectl completions
+source <(kubectl completion zsh)
 
 zinit cdreplay -q
 
@@ -85,10 +78,13 @@ alias gcl='git clone'
 alias c='clear'
 alias gc='git commit'
 alias gs='git status'
-alias gl='git log'
+alias gl='git log | bat'
 alias ga='git add'
 alias gp='git push'
 alias ..='cd ..'
+alias open='xdg-open'
+alias k='kubectl'
+
 
 # Shell integrations
 eval "$(fzf --zsh)"
