@@ -1,26 +1,28 @@
 return {
-    settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-            },
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
 
-            diagnostics = {
-                globals = {
-                    "vim",
-                },
-            },
+			diagnostics = {
+				globals = {
+					"vim",
+					"Snacks",
+					"dd",
+				},
+			},
 
-            workspace = {
-                checkThirdParty = false,
-                library = {
-                    vim.env.VIMRUNTIME,
-                },
-            },
+			workspace = {
+				checkThirdParty = false,
+				library = {
+					vim.env.VIMRUNTIME,
+				},
+			},
 
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 }

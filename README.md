@@ -68,6 +68,9 @@ command -v sesh
 # Oh My Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
+# Leaf
+curl -fsSL https://leaf.rivolink.mg/install.sh | sh
+
 # Herdr and its plugins
 curl -fsSL https://herdr.dev/install.sh | sh
 herdr plugin install cloudmanic/herdr-plus

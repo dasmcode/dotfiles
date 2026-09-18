@@ -1,0 +1,22 @@
+{
+  "debugLog": false,
+  "doublePressToConfirm": false,
+  "permissionReviewLog": true,
+  "yoloMode": false,
+  "permission": {
+    "path": {
+      "read": "allow",
+      "write": "ask",
+      "edit": "ask",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "external_directory": "ask",
+    "bash": {
+      "*": "ask",
+      "rm -rf *": "deny",
+      "sudo *": "ask"
+    }
+  }
+}

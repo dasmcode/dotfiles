@@ -1,0 +1,2 @@
+# Runtime-generated permission review logs are local state, not configuration.
+/extensions/pi-permission-system/logs/
