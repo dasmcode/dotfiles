@@ -1,0 +1,19 @@
+# Top-level project fields.
+name = "b🧠"                                      # required: the workspace label
+group = "personal"
+description = "second brain obsidian"             # shown in the browser
+working_dir = "${HOME}/Documents/b/"    # ~ and $VARS expand
+
+[[tabs]]
+name = "nvim"                                            # required: the tab label
+command = "nvim" # runs on startup
+
+[[tabs]]
+name = "pi"
+
+[[tabs.panes]]
+command = "pi"
+
+[[tabs.panes]]
+command = "ll"
+split = "right"
