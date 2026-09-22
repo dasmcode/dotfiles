@@ -15,7 +15,7 @@ return {
       function()
         require("lazydocker").open()
       end,
-      desc = "Open Lazydocker floating window",
+      desc = "Lazydocker",
     },
   },
 }
