@@ -9,5 +9,9 @@ return {
 			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
+		sections = {
+			lualine_c = { "buffers" },
+			lualine_x = { "selectioncount", "lsp_status", "fileformat", "filetype" },
+		},
 	},
 }

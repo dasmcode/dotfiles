@@ -29,6 +29,13 @@ sudo dnf install -y \
   gcc gcc-c++ make cmake unzip
 ```
 
+> [!IMPORTANT]
+> Remember to install ast-grep to use with grug-far.nvim
+
+```bash
+npm i @ast-grep/cli -g
+```
+
 Install a Nerd Font (the Ghostty configuration expects **FiraCode Nerd Font**), then set Zsh as the login shell:
 
 ```bash
@@ -84,7 +91,7 @@ go install github.com/lmilojevicc/seshagy/cmd/seshagy@latest
 go install charm.land/glow/v3@latest
 
 # Register the seshagy Herdr keybind
-seshagy install keybind herdr
+seshagy keybind install herdr
 ```
 
 Restart the shell or source the Rust and local-bin environments before continuing:

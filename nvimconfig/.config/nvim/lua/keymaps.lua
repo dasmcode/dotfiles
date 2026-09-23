@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader="\\"
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 vim.keymap.set({ "n" }, "<C-a>", "ggVG", {desc = "Select all text in a buffer"})
@@ -44,12 +45,13 @@ vim.keymap.set("n", "<leader>e", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :restart)" })
 
--- tab switch using mini tabline
+-- buffer keymaps
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<leader>xc", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
-vim.keymap.set("n", "<leader>xo", "<cmd>%bd|e#|bd#<CR>", { desc = "Delete other buffers" })
-vim.keymap.set("n", "<leader>xx", "<cmd>%bd<CR>", { desc = "Delete all buffers" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete current buffer" })
+vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", { desc = "Delete other buffers" })
+vim.keymap.set("n", "<leader>ba", "<cmd>%bd<CR>", { desc = "Delete all buffers" })
+vim.keymap.set("n", "<leader>bl", "<C-^>", { desc = "Go to last visited buffer" })
 
 -- -- native undotree
 -- vim.keymap.set("n", "<leader>u", function()

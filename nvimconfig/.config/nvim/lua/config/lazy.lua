@@ -16,8 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		{ 'nvim-mini/mini.nvim', version = false },
 		{ import = "themes" },
+		{ import = "mini" },
 		{ import = "plugins" },
 	},
 })
