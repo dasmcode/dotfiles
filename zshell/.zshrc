@@ -12,11 +12,9 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Load completions
-zinit light zsh-users/zsh-syntax-highlighting
+# Load completion definitions before compinit.
 zinit light zsh-users/zsh-completions
 # zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -33,6 +31,10 @@ autoload -Uz compinit && compinit
 
 # Add kubectl completions
 source <(kubectl completion zsh)
+
+# fzf-tab must follow compinit and precede widgets that wrap ZLE.
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting
 
 zinit cdreplay -q
 
@@ -123,6 +125,12 @@ export BAT_THEME="Catppuccin Mocha"
 
 . "$HOME/.local/bin/env"
 . "$HOME/.cargo/env"
+
+# Keep Tab available for fzf-tab. Deja still shows inline suggestions;
+# Right Arrow accepts the full suggestion and Ctrl+Right accepts the next word.
+# Leave Ctrl+X unbound by Deja so the existing Ctrl+X Ctrl+E editor binding works.
+export DEJA_CYCLE_KEY=''
+export DEJA_TOGGLE_KEY=''
 
 if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then
   source "$HOME/.local/share/deja/init.zsh"
