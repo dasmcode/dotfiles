@@ -15,7 +15,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Load completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
@@ -123,3 +123,9 @@ export BAT_THEME="Catppuccin Mocha"
 
 . "$HOME/.local/bin/env"
 . "$HOME/.cargo/env"
+
+if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then
+  source "$HOME/.local/share/deja/init.zsh"
+else
+  eval "$(deja init zsh)"
+fi
