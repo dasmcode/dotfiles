@@ -51,12 +51,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 0
 vim.opt.termguicolors = true
 
--- vim.api.nvim_create_autocmd("TextYankPost", {
--- 	desc = "Highlight when yanking (copying) text",
--- 	callback = function()
--- 		vim.hl.on_yank()
--- 	end,
--- })
 -- single global status line --
 vim.opt.laststatus = 3
 

@@ -58,6 +58,28 @@ return {
 		},
 		picker = {
 			enabled = true,
+			prompt = " ",
+			layout = "custom",
+			layouts = {
+				custom = {
+					layout = {
+						box = "vertical",
+						backdrop = 50,
+						row = -1,
+						width = 0,
+						height = 0.5,
+						border = "rounded",
+						title = " {title} {live} ",
+						title_pos = "left",
+						{
+						  box = "horizontal",
+						  { win = "list", border = "rounded" },
+						  { win = "preview", title = "{preview}", width = 0.7, border = "rounded" },
+						},
+						{ win = "input", height = 1, border = "none" },
+					}
+				}
+			},
 			matcher = {
 				frecency = true,
 			},
