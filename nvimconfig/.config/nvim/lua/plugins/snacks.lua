@@ -74,7 +74,7 @@ return {
 						{
 						  box = "horizontal",
 						  { win = "list", border = "rounded" },
-						  { win = "preview", title = "{preview}", width = 0.7, border = "rounded" },
+						  { win = "preview", title = "{preview}", width = 0.6, border = "rounded" },
 						},
 						{ win = "input", height = 1, border = "none" },
 					}
@@ -115,8 +115,8 @@ return {
 		{ "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
 		{ "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
 		-- git
-		{ "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
-		{ "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
+		{ "<leader>gb", function() Snacks.picker.git_branches({ layout="select" }) end, desc = "Git Branches" },
+		{ "<leader>gl", function() Snacks.lazygit.log() end, desc = "Git Log" },
 		{ "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
 		{ "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
 		{ "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
@@ -132,7 +132,7 @@ return {
 		{ "<leader>fH", function() Snacks.picker.highlights() end, desc = "Highlights" },
 		{ "<leader>fi", function() Snacks.picker.icons() end, desc = "Icons" },
 		{ "<leader>fj", function() Snacks.picker.jumps() end, desc = "Jumps" },
-		{ "<leader>fk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+		{ "<leader>fk", function() Snacks.picker.keymaps({ layout="default" }) end, desc = "Keymaps" },
 		{ "<leader>fl", function() Snacks.picker.loclist() end, desc = "Location List" },
 		{ "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
 		{ "<leader>fM", function() Snacks.picker.man() end, desc = "Man Pages" },
@@ -156,7 +156,7 @@ return {
 		{ "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
 		{ "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
 		{ "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-		{ "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
+		{ "<leader>lg", function() Snacks.lazygit.open() end, desc = "Lazygit" },
 		{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
 		{ "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
 		{ "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },

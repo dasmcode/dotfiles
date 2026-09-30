@@ -28,6 +28,7 @@
   "mini.nvim": { "branch": "main", "commit": "561751e839b99a4baca36b9d963166b66d2536a6" },
   "mini.pairs": { "branch": "main", "commit": "b1c5a726921b7a8c9321e9a7a208aa0571de5810" },
   "mini.surround": { "branch": "main", "commit": "33a2ebe5df8eb4751828fcba133e18ed0fbbdfab" },
+  "mini.trailspace": { "branch": "main", "commit": "82c4fb7d4336f8824ca6c97068932886b56326d0" },
   "modicator.nvim": { "branch": "main", "commit": "7f867b4980946f115f4ccb922637d70d89a59cb4" },
   "neogit": { "branch": "master", "commit": "5adc81b26232954cd7a90f158aa7844c18fc3165" },
   "noice.nvim": { "branch": "main", "commit": "7bfd942445fb63089b59f97ca487d605e715f155" },
