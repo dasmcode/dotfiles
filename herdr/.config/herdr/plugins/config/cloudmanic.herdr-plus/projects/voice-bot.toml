@@ -1,12 +1,16 @@
 # Top-level project fields.
-name = "voice-bot"                                      # required: the workspace label
+name = "voice-vrm"                                      # required: the workspace label
 group = "ICICI"
 description = "dev project to transcribe and extract meaningful insights from currency exchange call recordings"             # shown in the browser
-working_dir = "${HOME}/Documents/voice-bot/"    # ~ and $VARS expand
+working_dir = "${HOME}/Documents/voice-vrm/"    # ~ and $VARS expand
 
 [[tabs]]
-name = "nvim"                                            # required: the tab label
-command = "source .venv/bin/activate && nvim" # runs on startup
+name = "app"                                            # required: the tab label
+command = "cd ./dev && source .venv/bin/activate && nvim" # runs on startup
+
+[[tabs]]
+name = "frontend"                                            # required: the tab label
+command = "cd ./frontend && nvim" # runs on startup
 
 [[tabs]]
 name = "pi"

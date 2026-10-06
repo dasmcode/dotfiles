@@ -80,6 +80,7 @@ alias gcl='git clone'
 alias c='clear'
 alias gc='git commit'
 alias gs='git status'
+alias gwk='git worktree'
 alias gl='git log | bat'
 alias ga='git add'
 alias gp='git push'
@@ -137,3 +138,9 @@ if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then
 else
   eval "$(deja init zsh)"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/meli/google-cloud-sdk/path.zsh.inc' ]; then . '/home/meli/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/meli/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/meli/google-cloud-sdk/completion.zsh.inc'; fi
