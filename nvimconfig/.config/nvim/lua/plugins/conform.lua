@@ -18,6 +18,7 @@ return {
 			css = { "prettierd", "prettier", stop_after_first = true },
 			yaml = { "prettierd", "prettier", stop_after_first = true },
 			json = { "prettierd", "prettier", stop_after_first = true },
+			jsonc = { "prettierd", "prettier", stop_after_first = true },
 		},
 		default_format_ops = {
 			timeout_ms = 3000,

@@ -10,6 +10,7 @@ return {
 					"vim",
 					"Snacks",
 					"dd",
+					"hl",
 				},
 			},
 
