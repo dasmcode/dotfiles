@@ -1,0 +1,5 @@
+{
+  "runtime.version": "LuaJIT",
+  "runtime.path": ["?.lua", "?/init.lua"],
+  "workspace.library": ["./"]
+}
