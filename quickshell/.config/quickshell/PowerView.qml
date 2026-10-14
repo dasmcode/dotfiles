@@ -20,7 +20,7 @@ ColumnLayout {
     }
     Text {
         Layout.fillWidth: true
-        text: root.shellState.hasBattery ? Math.round(root.shellState.battery.percentage) + "% · " + UPowerDeviceState.toString(root.shellState.battery.state) : "Connected to AC power"
+        text: root.shellState.hasBattery ? root.shellState.batteryPercentage + "% · " + UPowerDeviceState.toString(root.shellState.battery.state) : "Connected to AC power"
         wrapMode: Text.Wrap
         color: "#f5e2c5"
         font { family: "FiraCode Nerd Font"; pixelSize: 18; bold: true }
@@ -32,7 +32,7 @@ ColumnLayout {
         radius: 4
         color: "#1d3631"
         Rectangle {
-            width: parent.width * (root.shellState.hasBattery ? root.shellState.battery.percentage / 100 : 0)
+            width: parent.width * root.shellState.batteryFraction
             height: parent.height
             radius: 4
             color: "#7ad9a8"
@@ -46,7 +46,7 @@ ColumnLayout {
             const details = [root.shellState.onBattery ? "Running on battery" : "External power connected"];
             if (battery.timeToEmpty > 0) details.push(root.duration(battery.timeToEmpty) + " remaining");
             if (battery.timeToFull > 0) details.push(root.duration(battery.timeToFull) + " until full");
-            if (battery.healthSupported) details.push("Battery health: " + Math.round(battery.healthPercentage) + "%");
+            if (battery.healthSupported) details.push("Battery health: " + root.shellState.batteryHealthPercentage + "%");
             return details.join("\n");
         }
         wrapMode: Text.Wrap

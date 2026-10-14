@@ -17,6 +17,15 @@ Scope {
     readonly property var audio: sink && sink.ready ? sink.audio : null
     readonly property var battery: UPower.displayDevice
     readonly property bool hasBattery: battery && battery.ready && battery.isPresent && battery.isLaptopBattery
+    readonly property real batteryFraction: {
+        if (!hasBattery) return 0;
+        if (battery.energyCapacity > 0)
+            return Math.max(0, Math.min(1, battery.energy / battery.energyCapacity));
+        const percentage = battery.percentage;
+        return Math.max(0, Math.min(1, percentage > 1 ? percentage / 100 : percentage));
+    }
+    readonly property int batteryPercentage: Math.round(batteryFraction * 100)
+    readonly property int batteryHealthPercentage: hasBattery ? toPercent(battery.healthPercentage) : 0
     readonly property bool onBattery: UPower.onBattery
     readonly property var adapter: Bluetooth.defaultAdapter
     readonly property var bluetoothDevices: adapter ? adapter.devices.values : []
@@ -61,6 +70,11 @@ Scope {
     }
     function stopWifiScan() {
         for (const device of wifiDevices) device.scannerEnabled = false;
+    }
+    function toPercent(value) {
+        const percentage = Number(value);
+        if (!Number.isFinite(percentage)) return 0;
+        return Math.round(Math.max(0, Math.min(100, percentage <= 1 ? percentage * 100 : percentage)));
     }
     function toggleMute() { if (audio) audio.muted = !audio.muted; }
     function changeVolume(delta) {

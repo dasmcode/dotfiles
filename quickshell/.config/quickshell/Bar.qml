@@ -66,8 +66,8 @@ PanelWindow {
         Pill {
             id: powerPill
             icon: bar.shellState.hasBattery ? "󰁹" : "󰚥"
-            label: bar.shellState.hasBattery ? Math.round(bar.shellState.battery.percentage) + "%" : "AC"
-            iconColor: bar.shellState.hasBattery && bar.shellState.battery.percentage < 20 ? "#ff6048" : "#7ad9a8"
+            label: bar.shellState.hasBattery ? bar.shellState.batteryPercentage + "%" : "AC"
+            iconColor: bar.shellState.hasBattery && bar.shellState.batteryPercentage < 20 ? "#ff6048" : "#7ad9a8"
             tooltip: "Power"
             active: bar.popupOpen && bar.shellState.openPopup === "power"
             onClicked: bar.togglePopup(powerPill, "power")
