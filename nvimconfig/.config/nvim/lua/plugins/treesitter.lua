@@ -53,6 +53,7 @@ return {
 				"tsx",
 				"html",
 				"css",
+				"qmljs",
 				"lua",
 				"json",
 				"bash",
@@ -74,6 +75,8 @@ return {
 			}
 
 			treesitter.install(parsers)
+			-- QML files use the qmljs Tree-sitter grammar.
+			vim.treesitter.language.register("qmljs", "qml")
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function(args)
 					local lang = vim.treesitter.language.get_lang(args.match)

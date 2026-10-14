@@ -1,6 +1,6 @@
 hl.config({
 	general = {
-		layout = "scrolling",
+		layout = "dwindle",
 	},
 	dwindle = {
 		preserve_split = true, -- You probably want this

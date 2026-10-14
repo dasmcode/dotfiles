@@ -6,6 +6,8 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
+			-- No external QML formatter: let Conform fall back to qmlls.
+			-- qml = {},
 			toml = { "taplo" },
 			dockerfile = { "dockerfmt" },
 			python = { "isort", "ruff_format" },
@@ -19,8 +21,9 @@ return {
 			yaml = { "prettierd", "prettier", stop_after_first = true },
 			json = { "prettierd", "prettier", stop_after_first = true },
 			jsonc = { "prettierd", "prettier", stop_after_first = true },
+			conf = { "prettierd", "prettier", stop_after_first = true },
 		},
-		default_format_ops = {
+		default_format_opts = {
 			timeout_ms = 3000,
 			async = false,
 			quiet = false,

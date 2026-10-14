@@ -13,3 +13,10 @@ hl.monitor({
 	position = "-1920x0",
 	scale = "1",
 })
+-- Fallback
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	position = "0x0",
+	scale = "1",
+})

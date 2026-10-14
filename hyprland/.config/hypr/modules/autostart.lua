@@ -3,7 +3,9 @@
 -------------------
 
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("waybar")
+  -- hl.exec_cmd("waybar")
+  hl.exec_cmd("quickshell --no-duplicate --path /home/meli/.config/quickshell")
+  hl.exec_cmd('openrgb --profile "main"')
   hl.exec_cmd("swaync")
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("playerctld daemon")

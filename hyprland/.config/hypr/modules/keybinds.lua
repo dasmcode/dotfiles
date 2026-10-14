@@ -20,7 +20,7 @@ local secondMod = "SUPER + SHIFT" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind("Print", hl.dsp.exec_cmd(screenshot .. "window"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd(screenshot .. "region"))
-hl.bind("ALT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("quickshell --no-duplicate --path /home/meli/.config/quickshell/lockscreen"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(music))
