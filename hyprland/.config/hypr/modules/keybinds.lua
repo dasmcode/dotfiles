@@ -3,8 +3,9 @@
 ---------------------
 local terminal = "ghostty"
 local fileManager = "nemo"
-local browser = "~/.local/bin/zen"
-local music = "spotify"
+local browser = "if command -v zen >/dev/null 2>&1; then zen; else flatpak run app.zen_browser.zen; fi"
+-- Let Spotify detect Wayland instead of rendering through blurry XWayland.
+local music = "if command -v spotify >/dev/null 2>&1; then env -u DISPLAY spotify; elif [ -x /snap/bin/spotify ]; then env -u DISPLAY /snap/bin/spotify; else notify-send 'Spotify not found' 'Install Spotify or check its launcher.'; fi"
 -- local launcher = "rofi -show drun -show-icons"
 local launcher = "vicinae toggle"
 local runner = "rofi -show run"
@@ -24,6 +25,10 @@ hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("quickshell --no-duplicate --pa
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(music))
+hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd("systemctl suspend"))
+hl.bind(mainMod .. " + ALT + 1", hl.dsp.exec_cmd("if tuned-adm profile powersave; then notify-send -u low '   Power mode' 'Power saver enabled'; else notify-send -u critical ' Power mode' 'Failed to switch to power saver'; fi"))
+hl.bind(mainMod .. " + ALT + 2", hl.dsp.exec_cmd("if tuned-adm profile balanced; then notify-send -u normal '   Power mode' 'Balanced mode enabled'; else notify-send -u critical ' Power mode' 'Failed to switch to balanced mode'; fi"))
+hl.bind(mainMod .. " + ALT + 3", hl.dsp.exec_cmd("if tuned-adm profile throughput-performance; then notify-send -u normal '  Power mode' 'Performance mode enabled'; else notify-send -u critical ' Power mode' 'Failed to switch to performance mode'; fi"))
 hl.bind(mainMod .. " + X", hl.dsp.window.close())
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(launcher))
 hl.bind(secondMod .. " + Space", hl.dsp.exec_cmd(runner))
@@ -49,6 +54,10 @@ hl.bind(secondMod .. " + j", hl.dsp.window.move({ direction = "down" }))
 
 hl.bind(secondMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+
+-- Cycle workspaces with mainMod + Tab / secondMod + Tab.
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(secondMod .. " + TAB", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]

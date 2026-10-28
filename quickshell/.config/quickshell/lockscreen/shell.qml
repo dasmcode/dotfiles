@@ -15,8 +15,16 @@ ShellRoot {
     property string password: ""
     property bool failed: false
     readonly property string greeting: clock.date.getHours() < 12 ? "GOOD MORNING" : clock.date.getHours() < 18 ? "GOOD AFTERNOON" : "GOOD EVENING"
-    // DP-2 is the primary output in ~/.config/hypr/modules/monitors.lua.
-    readonly property string primaryMonitorName: "DP-2"
+    // Prefer the configured external primary when connected; on a laptop-only
+    // session, fall back to the first available output so the unlock UI is shown.
+    readonly property string primaryMonitorName: {
+        const screens = Quickshell.screens;
+        for (let i = 0; i < screens.length; ++i) {
+            if (screens[i].name === "DP-2")
+                return screens[i].name;
+        }
+        return screens.length > 0 ? screens[0].name : "";
+    }
 
     function submitPassword() {
         if (password.length === 0 || pam.active)

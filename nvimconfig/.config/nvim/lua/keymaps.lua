@@ -40,6 +40,7 @@ vim.keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ desc = "Replace word cursor is on globally" }
 )
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "LSP Rename Variable"})
 vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
 vim.keymap.set("n", "<leader>e", "$", { desc = "Go to end of line" })
 

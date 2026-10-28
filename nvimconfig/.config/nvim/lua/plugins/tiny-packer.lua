@@ -29,7 +29,7 @@ return {
 		opts = {
 			-- Use Snacks for the action picker and Neovim's built-in diff preview.
 			picker = "snacks",
-			backend = "vim",
+			backend = "delta",
 		},
 		keys = {
 			{
@@ -38,6 +38,7 @@ return {
 				function()
 					require("tiny-code-action").code_action()
 				end,
+				{ noremap = true, silent = true },
 				desc = "Code Action",
 			},
 		},
