@@ -15,3 +15,5 @@ window-height = 9999
 # window-decoration = true
 gtk-titlebar = false
 working-directory = home
+
+custom-shader = shaders/blaze-cursor.glsl

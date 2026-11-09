@@ -3,7 +3,7 @@
 ---------------------
 local terminal = "ghostty"
 local fileManager = "nemo"
-local browser = "if command -v zen >/dev/null 2>&1; then zen; else flatpak run app.zen_browser.zen; fi"
+local browser = "sh -c 'if [ -x \"$HOME/.local/bin/zen\" ]; then exec \"$HOME/.local/bin/zen\"; elif command -v zen >/dev/null 2>&1; then exec zen; else exec flatpak run app.zen_browser.zen; fi'"
 -- Let Spotify detect Wayland instead of rendering through blurry XWayland.
 local music = "if command -v spotify >/dev/null 2>&1; then env -u DISPLAY spotify; elif [ -x /snap/bin/spotify ]; then env -u DISPLAY /snap/bin/spotify; else notify-send 'Spotify not found' 'Install Spotify or check its launcher.'; fi"
 -- local launcher = "rofi -show drun -show-icons"
@@ -39,6 +39,17 @@ hl.bind(
 )
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+
+-- Resize mode: SUPER + R, then use vim keys; Escape/Enter exits the mode.
+hl.bind(mainMod .. " + R", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+	hl.bind("h", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true })
+	hl.bind("l", hl.dsp.window.resize({ x = 50, y = 0, relative = true }), { repeating = true })
+	hl.bind("k", hl.dsp.window.resize({ x = 0, y = -50, relative = true }), { repeating = true })
+	hl.bind("j", hl.dsp.window.resize({ x = 0, y = 50, relative = true }), { repeating = true })
+	hl.bind("Escape", hl.dsp.submap("reset"))
+	hl.bind("Return", hl.dsp.submap("reset"))
+end)
 
 -- Move focus with mainMod + vim keybinds
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
