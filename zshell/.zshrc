@@ -27,10 +27,14 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions
+autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 # Add kubectl completions
 source <(kubectl completion zsh)
+
+# Add aws-cli completions
+complete -C "${HOME}/.local/bin/aws_completer" aws
 
 # fzf-tab must follow compinit and precede widgets that wrap ZLE.
 zinit light Aloxaf/fzf-tab
